@@ -1,0 +1,17 @@
+#!/bin/bash
+
+TEMP=4000
+
+if pgrep -x gammastep >/dev/null; then
+    pkill gammastep
+    notify-send \
+        -h string:x-canonical-private-synchronous:nightlight \
+        "🌙 Night Light" \
+        "Disabled"
+else
+    gammastep -O "$TEMP" >/dev/null 2>&1 &
+    notify-send \
+        -h string:x-canonical-private-synchronous:nightlight \
+        "🌙 Night Light" \
+        "Enabled (${TEMP}K)"
+fi

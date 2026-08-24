@@ -1,0 +1,19 @@
+#!/bin/bash
+
+FIREFOX_PROFILE_DIR="$HOME/.var/app/org.mozilla.firefox/config/mozilla/firefox"
+
+declare -A profiles=(
+    ["template"]="$FIREFOX_PROFILE_DIR/UxZRWtad.Profile 2"
+    ["student"]="$FIREFOX_PROFILE_DIR/recppRvi.Profile 3"
+    ["BS"]="$FIREFOX_PROFILE_DIR/h0fMh1Lg.Profile 4"
+    ["Courses"]="$FIREFOX_PROFILE_DIR/ijBKtrBh.Profile 5"
+    ["sharath"]="$FIREFOX_PROFILE_DIR/qkmxm8sc.default"
+)
+
+profile=$(printf '%s\n' "${!profiles[@]}" | sort | rofi -dmenu -i -p "Firefox")
+
+[ -z "$profile" ] && exit 0
+
+flatpak run org.mozilla.firefox \
+    --profile "${profiles[$profile]}" \
+    --no-remote

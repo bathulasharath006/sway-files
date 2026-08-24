@@ -1,0 +1,16 @@
+#!/bin/bash
+
+declare -A profiles=(
+    ["template"]="$HOME/snap/firefox/common/.mozilla/firefox/UxZRWtad.Profile 2"
+    ["21f1002877"]="$HOME/snap/firefox/common/.mozilla/firefox/recppRvi.Profile 3"
+    ["BS"]="$HOME/snap/firefox/common/.mozilla/firefox/h0fMh1Lg.Profile 4"
+    ["Courses"]="$HOME/snap/firefox/common/.mozilla/firefox/ijBKtrBh.Profile 5"
+    ["sharath"]="$HOME/snap/firefox/common/.mozilla/firefox/qkmxm8sc.default"
+)
+
+profile=$(printf '%s\n' "${!profiles[@]}" | sort | rofi -dmenu -i -p "Firefox")
+
+[ -z "$profile" ] && exit 0
+
+firefox --profile "${profiles[$profile]}" --no-remote
+

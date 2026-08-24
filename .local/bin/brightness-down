@@ -1,0 +1,10 @@
+#!/bin/bash
+
+brightnessctl set 5%-
+
+VALUE=$(brightnessctl -m | awk -F, '{print $4}')
+
+notify-send \
+    -h string:x-canonical-private-synchronous:brightness \
+    "☀ Brightness" \
+    "$VALUE"
