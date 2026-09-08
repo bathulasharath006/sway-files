@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Google Messages
+Exec=flatpak run org.mozilla.firefox --profile /home/groot/.var/app/org.mozilla.firefox/config/mozilla/firefox/webapp --no-remote --new-window https://messages.google.com/web/conversations
+Terminal=false
+Type=Application
+Icon=messages
+StartupWMClass=web.messages.com
+Comment=Google Messages
+Categories=Network;InstantMessaging;Chat;
+

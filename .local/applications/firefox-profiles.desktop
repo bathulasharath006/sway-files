@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Firefox Profiles
+Comment=Choose a Firefox profile
+Exec=/home/groot/.local/bin/firefox-profile
+Icon=firefox
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;
+

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=WhatsApp
+Exec=flatpak run org.mozilla.firefox --profile /home/groot/.var/app/org.mozilla.firefox/config/mozilla/firefox/webapp --no-remote --new-window https://web.whatsapp.com/
+Terminal=false
+Type=Application
+Icon=whatsapp
+StartupWMClass=web.whatsapp.com
+Comment=WhatsApp Web
+Categories=Network;InstantMessaging;Chat;
+

@@ -1,8 +1,11 @@
 #!/bin/bash
 
-TIME=$(date +"%H:%M")
+# TIME=$(date +"%H:%M")
 DAY=$(date +"%j")
 YEAR_DAYS=$(date -d "31 Dec" +"%j")
-DATE=$(date +"%-d %B")
+DATE=$(date +"%-d %b")
 
-echo "󰥔 $TIME   󰃮 Day: $DAY/$YEAR_DAYS   󰸗 $DATE"
+LEFT_DAYS=$(( YEAR_DAYS - DAY))
+
+# echo "󰥔 $TIME   󰃮 Day: $DAY/$YEAR_DAYS   󰸗 $DATE"
+echo "󰃮 Day: $DAY/$YEAR_DAYS ($LEFT_DAYS)  󰸗 $DATE"
